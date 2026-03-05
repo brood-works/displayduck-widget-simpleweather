@@ -1,0 +1,33 @@
+{{#if !fetched()}}
+  <div class="loader pop-in">
+    <div class="spinner"></div>
+    <div class="loader-icon">Weather</div>
+  </div>
+{{/if}}
+
+{{#if fetched()}}
+  {{#if currentWeather()}}
+    <div class="weather pop-in {{ weatherFeatureClass() }}">
+      <div class="icon-wrap">
+        <img src="{{ weatherIconUrl() }}" alt="{{ currentWeather().weatherCondition.name }}" />
+      </div>
+      <div class="details">
+        <div class="temperature">{{ temperatureText() }}<sup>{{ unitsLabel() }}</sup></div>
+        {{#if showWindSpeed()}}
+          <div class="wind">{{ windspeedText() }}<sub>{{ windLabel() }}</sub></div>
+        {{/if}}
+        {{#if showPrecipitation()}}
+          <div class="precipitation">
+            {{ precipitationText() }}<sub>{{ precipitationLabel() }}</sub>
+            {{#if currentWeather().precipitation}} ({{ precipitationProbabilityText() }}%) {{/if}}
+          </div>
+        {{/if}}
+        {{#if showCity()}}
+          {{#if cityName()}}
+            <div class="city">{{ cityName() }}</div>
+          {{/if}}
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+{{/if}}
