@@ -13,14 +13,12 @@ export class DisplayDuckWidget {
   private refreshTimer: ReturnType<typeof setTimeout> | null = null;
   private config: Signal<Record<string, unknown>>;
 
-  public fetched: Signal<boolean>;
   public activatedOptions: Signal<number>;
   public cityName: Signal<string | null>;
   public currentWeather: Signal<Weather | null>;
 
   public constructor(private readonly ctx: WidgetContext) {
     this.config = signal(this.extractConfig(ctx.payload));
-    this.fetched = signal(false);
     this.activatedOptions = signal(0);
     this.cityName = signal<string | null>(null);
     this.currentWeather = signal<Weather | null>(null);
@@ -125,7 +123,7 @@ export class DisplayDuckWidget {
       this.refreshTimer = null;
     }
 
-    this.fetched.set(false);
+    this.ctx.setLoading(true);
     this.recomputeActivatedOptions();
 
     try {
@@ -163,11 +161,10 @@ export class DisplayDuckWidget {
         this.cityName.set(null);
       }
 
-      this.fetched.set(true);
-    } catch (error) {
+    } catch (error) { 
       console.error('[SimpleWeather] Failed to refresh weather', error);
-      this.fetched.set(true);
     } finally {
+      this.ctx.setLoading(false);
       this.refreshTimer = setTimeout(() => {
         void this.refreshWeather();
       }, this.intervalMinutes() * 60 * 1000);
