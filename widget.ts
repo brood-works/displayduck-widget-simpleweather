@@ -54,7 +54,7 @@ export class DisplayDuckWidget {
 
   public weatherIconUrl(): string {
     const icon = this.currentWeather()?.weatherCondition?.icon ?? 'unknown';
-    return `assets/img/weather/${icon}.svg`;
+    return `img/${icon}.svg`;
   }
 
   public weatherFeatureClass(): string {
