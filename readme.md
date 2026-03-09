@@ -10,10 +10,9 @@
 </div>
 
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/brood-works/displayduck-widget-simpleweather">
     <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -31,7 +30,6 @@ This widget displays the current weather conditions based on passed lat/long.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 This widget requires a latitude ang longitude to gather information for your location.
@@ -56,7 +54,6 @@ Our friends over at <a href="https://www.latlong.net/">latlong.net</a> built an 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -79,10 +76,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/brood-works/displayduck-widget-simpleweather.svg
 [contributors-url]: https://github.com/brood-works/displayduck-widget-simpleweather/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/brood-works/displayduck-widget-simpleweather
