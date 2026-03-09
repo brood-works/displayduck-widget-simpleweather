@@ -34,20 +34,8 @@ This widget displays the current weather conditions based on passed lat/long.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-Currently the <a href="https://docs.discord.com/developers/topics/rpc">Discord RPC API</a> states that the RPC API is in private beta, this means that you need your **own** <a href="https://discord.com/developers/applications">Discord Application ID</a> in order to use this widget.
-
-### Setting up a Discord Application
-
-1. Go to <a href="https://discord.com/developers/applications">applications</a>
-2. Make up an application name *(eg DisplayDuck Widget)*
-3. Go to `Oauth2` and setup `http://localhost` as Redirect URL under `Redirects`
-4. Go (back) to `General Information` and copy the `Application ID`
-5. Use this `Application ID` in the `Application Client ID` field in the widget config
+This widget requires a latitude ang longitude to gather information for your location.
+Our friends over at <a href="https://www.latlong.net/">latlong.net</a> built an amazing tool to get your Latitude and Longitude easily.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
