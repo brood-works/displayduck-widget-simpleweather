@@ -12,7 +12,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/brood-works/displayduck-widget-simpleweather">
+  <a href="https://github.com/brood-works/displayduck-pack-simpleweather">
     <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -69,18 +69,18 @@ Don't forget to give the project a star! Thanks again!
 
 ### Contributors:
 
-<a href="https://github.com/brood-works/displayduck-widget-simpleweather/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=brood-works/displayduck-widget-simpleweather" />
+<a href="https://github.com/brood-works/displayduck-pack-simpleweather/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=brood-works/displayduck-pack-simpleweather" />
 </a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[contributors-shield]: https://img.shields.io/github/contributors/brood-works/displayduck-widget-simpleweather.svg
-[contributors-url]: https://github.com/brood-works/displayduck-widget-simpleweather/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/brood-works/displayduck-widget-simpleweather
-[forks-url]: https://github.com/brood-works/displayduck-widget-simpleweather/network/members
-[stars-shield]: https://img.shields.io/github/stars/brood-works/displayduck-widget-simpleweather
+[contributors-shield]: https://img.shields.io/github/contributors/brood-works/displayduck-pack-simpleweather.svg
+[contributors-url]: https://github.com/brood-works/displayduck-pack-simpleweather/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/brood-works/displayduck-pack-simpleweather
+[forks-url]: https://github.com/brood-works/displayduck-pack-simpleweather/network/members
+[stars-shield]: https://img.shields.io/github/stars/brood-works/displayduck-pack-simpleweather
 [stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/brood-works/displayduck-widget-simpleweather
+[issues-shield]: https://img.shields.io/github/issues/brood-works/displayduck-pack-simpleweather
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
