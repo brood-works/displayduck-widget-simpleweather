@@ -12,6 +12,7 @@ type Weather = {
 export class DisplayDuckWidget {
   private refreshTimer: ReturnType<typeof setTimeout> | null = null;
   private config: Signal<Record<string, unknown>>;
+  private lastConfigFingerprint = '';
 
   public activatedOptions: Signal<number>;
   public cityName: Signal<string | null>;
@@ -25,11 +26,17 @@ export class DisplayDuckWidget {
   }
 
   public onInit(): void {
+    this.lastConfigFingerprint = this.configFingerprint();
     void this.refreshWeather();
   }
 
   public onUpdate(payload: WidgetPayload): void {
     this.config.set(this.extractConfig(payload));
+    const nextFingerprint = this.configFingerprint();
+    if (nextFingerprint === this.lastConfigFingerprint) {
+      return;
+    }
+    this.lastConfigFingerprint = nextFingerprint;
     void this.refreshWeather();
   }
 
@@ -115,6 +122,18 @@ export class DisplayDuckWidget {
 
   private units(): 'metric' | 'imperial' {
     return String(this.config().units ?? 'metric') === 'imperial' ? 'imperial' : 'metric';
+  }
+
+  private configFingerprint(): string {
+    return JSON.stringify({
+      latitude: this.latitude(),
+      longitude: this.longitude(),
+      interval: this.intervalMinutes(),
+      units: this.units(),
+      showWindSpeed: this.showWindSpeed(),
+      showPrecipitation: this.showPrecipitation(),
+      showCity: this.showCity(),
+    });
   }
 
   private async refreshWeather(): Promise<void> {
