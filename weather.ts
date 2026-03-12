@@ -1,4 +1,4 @@
-import { signal, type Signal, type WidgetContext, type WidgetPayload } from '@displayduck/base';
+import { httpFetch, signal, type Signal, type WidgetContext, type WidgetPayload } from '@displayduck/base';
 
 type Weather = {
   temperature: number;
@@ -140,11 +140,18 @@ export class DisplayDuckWidget {
         current: currentFields,
       });
 
-      const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params.toString()}`);
-      if (!response.ok) {
-        throw new Error(`Weather API failed: ${response.status}`);
-      }
-      const data = await response.json();
+      const data = JSON.parse(
+        await httpFetch(`https://api.open-meteo.com/v1/forecast?${params.toString()}`),
+      ) as {
+        current: {
+          temperature_2m: number;
+          is_day: number;
+          weathercode: number;
+          windspeed_10m?: number | null;
+          precipitation?: number | null;
+          precipitation_probability?: number | null;
+        };
+      };
 
       this.currentWeather.set({
         temperature: data.current.temperature_2m,
@@ -178,11 +185,11 @@ export class DisplayDuckWidget {
         lon: this.longitude().toString(),
         format: 'json',
       });
-      const response = await fetch(`https://nominatim.openstreetmap.org/reverse?${params.toString()}`);
-      if (!response.ok) {
-        throw new Error(`Nominatim failed: ${response.status}`);
-      }
-      const data = await response.json();
+      const data = JSON.parse(
+        await httpFetch(`https://nominatim.openstreetmap.org/reverse?${params.toString()}`),
+      ) as {
+        address?: Record<string, string | undefined>;
+      };
       const address = data.address ?? {};
       const city =
         address.city ??
