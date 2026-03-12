@@ -1,4 +1,4 @@
-import { signal, type Signal, type WidgetContext, type WidgetPayload } from '@displayduck/plugin-framework';
+import { signal, type Signal, type WidgetContext, type WidgetPayload } from '@displayduck/base';
 
 type Weather = {
   temperature: number;
